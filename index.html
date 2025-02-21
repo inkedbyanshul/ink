@@ -50,23 +50,23 @@
 
 
 /* Review Carousel */
-.review-carousel {
+.carousel1 {
   margin-top: 40px;
   text-align: center;
 }
 
-.review-carousel .carousel-content {
+.carousel1 .carousel1-content {
   text-align: center;
   padding: 20px;
 }
 
-.review-carousel .carousel-content img {
+.carousel1 .carousel1-content img {
   width: auto;
   height: auto;
   border-radius: 0%;
   margin-bottom: 10px;
 }
-                                 .review-carousel-btn {
+                                 .carousel1-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -84,27 +84,27 @@
       right: 10px;
     }
 
-.review-carousel .carousel-content h3 {
+.carousel1 .carousel1-content h3 {
   font-weight: 600;
   color: #333;
 }
 
-.review-carousel .carousel-content p {
+.carousel1 .carousel1-content p {
   font-style: italic;
   color: #555;
 }
 
-.review-carousel .carousel-content span {
+.carousel1 .carousel1-content span {
   font-weight: bold;
   color: #ff5733;
 }
 
-.review-carousel .carousel-images {
+.carousel1 .carousel1-images {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel-slide {
+.carousel1-slide {
   flex: 0 0 100%;
   display: block;
   text-align: center;
@@ -163,8 +163,8 @@
     </div>
 </div>
           </div>
-        <button class="review-carousel-btn prev" onclick="prevSlide()">&#10094;</button>
-        <button class="review-carousel-btn next" onclick="nextSlide()">&#10095;</button>
+        <button class="carousel1-btn prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel1-btn next" onclick="nextSlide()">&#10095;</button>
       </div>
     
     </hr> 
@@ -205,11 +205,11 @@
         
         <script>
     let currentReviewIndex = 0;
-const reviewSlides = document.querySelectorAll(".review-carousel-slide");
+const reviewSlides = document.querySelectorAll(".carousel1-slide");
 const totalReviewSlides = reviewSlides.length;
 
 function showReviewSlide(index) {
-    const reviewCarousel = document.querySelector(".review-carousel-images");
+    const reviewCarousel = document.querySelector(".carousel1-images");
     if (index >= totalReviewSlides) currentReviewIndex = 0;
     else if (index < 0) currentReviewIndex = totalReviewSlides - 1;
     else currentReviewIndex = index;
