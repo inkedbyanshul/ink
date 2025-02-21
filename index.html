@@ -31,7 +31,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(0, 0, 0, 0);
       border: none;
       padding: 10px 15px;
       cursor: pointer;
@@ -47,6 +47,54 @@
     .carousel-btn:hover {
       background-color: rgba(255, 255, 255, 1);
     }
+
+
+/* Review Carousel */
+.review-carousel {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.review-carousel .carousel-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.review-carousel .carousel-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 0%;
+  margin-bottom: 10px;
+}
+
+.review-carousel .carousel-content h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+.review-carousel .carousel-content p {
+  font-style: italic;
+  color: #555;
+}
+
+.review-carousel .carousel-content span {
+  font-weight: bold;
+  color: #ff5733;
+}
+
+.review-carousel .carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: block;
+  text-align: center;
+}
+
+
+                                 
   </style>
 </head>
 <body id="top">
@@ -67,7 +115,40 @@
         <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
         <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
       </div>
-  <!-- Grab Now Button with Price --> <br><div class="grab-now-container"> <button class="grab-now-btn" onclick="scrollToForm()">Grab Now</button> <span class="theme-color">@₹137</span> </div> <hr /> <!-- Payment QR Code Section --> <div class="payment-section"> <h3>Scan to Pay</h3> <br> <center><img src="./assets/images/MOBIQUICK_QR.jpg" alt="Mobikwik Payment QR Code"></center> </div> <div class="container"> <p><center>Free Shipping! for beautiful readers :)</center></p> <hr /> <br><form id="shipping-form"> 
+  <!-- Grab Now Button with Price --> <br><div class="grab-now-container"> <button class="grab-now-btn" onclick="scrollToForm()">Grab Now</button> <span class="theme-color">@₹137</span> </div> <hr />
+    <!-- Review Carousel Section -->
+<div class="review-carousel">
+    <h2>What Our Readers Are Saying</h2>
+    <div class="carousel">
+        <div class="carousel-images">
+            <!-- Review 1 -->
+            <div class="carousel-slide">
+                <img src="./assets/images/reviewer1.png" alt="Reviewer 1">
+                <h3>John Doe</h3>
+                <p>"This book is absolutely wonderful! It captivated me from the first page. A must-read for anyone who loves deep stories."</p>
+                <span>Rating: ⭐⭐⭐⭐⭐</span>
+            </div>
+            <!-- Review 2 -->
+            <div class="carousel-slide">
+                <img src="./assets/images/reviewer2.jpg" alt="Reviewer 2">
+                <h3>Jane Smith</h3>
+                <p>"I couldn’t put this book down. The characters were so real and the plot was so engaging. Highly recommend!"</p>
+                <span>Rating: ⭐⭐⭐⭐☆</span>
+            </div>
+            <!-- Review 3 -->
+            <div class="carousel-slide">
+                <img src="./assets/images/reviewer3.jpg" alt="Reviewer 3">
+                <h3>Emily Davis</h3>
+                <p>"A beautiful story that touches the heart. The author truly knows how to write emotional and gripping narratives."</p>
+                <span>Rating: ⭐⭐⭐⭐⭐</span>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    </hr> 
+        <br>
+        <!-- Payment QR Code Section --> <div class="payment-section"> <h3>Scan to Pay</h3> <br> <center><img src="./assets/images/MOBIQUICK_QR.jpg" alt="Mobikwik Payment QR Code"></center> </div> <div class="container"> <p><center>Free Shipping! for beautiful readers :)</center></p> <hr /> <br><form id="shipping-form"> 
       <br>
      
       <h2>Shipping Address</h2> 
@@ -99,6 +180,28 @@
 
     setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
   </script>
+<script>
+    let currentReviewIndex = 0;
+const reviewSlides = document.querySelectorAll(".carousel-slide");
+const totalReviewSlides = reviewSlides.length;
+
+function showReviewSlide(index) {
+    const reviewCarousel = document.querySelector(".carousel-images");
+    if (index >= totalReviewSlides) currentReviewIndex = 0;
+    else if (index < 0) currentReviewIndex = totalReviewSlides - 1;
+    else currentReviewIndex = index;
+
+    reviewCarousel.style.transform = `translateX(-${currentReviewIndex * 100}%)`;
+}
+
+function nextReview() {
+    showReviewSlide(currentReviewIndex + 1);
+}
+
+// Automatically slide every 5 seconds
+setInterval(nextReview, 5000); // 5000ms = 5 seconds
+</script>
+        
     <script>
         emailjs.init("-M2E86myTW1WMc8Gy"); // Your public key
 
