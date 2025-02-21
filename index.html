@@ -47,6 +47,41 @@
     .carousel-btn:hover {
       background-color: rgba(255, 255, 255, 1);
     }
+
+
+                                  /* Review Carousel */
+    .review-carousel {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .review-carousel .carousel-content {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .review-carousel .carousel-content img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .review-carousel .carousel-content h3 {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .review-carousel .carousel-content p {
+      font-style: italic;
+      color: #555;
+    }
+
+    .review-carousel .carousel-content span {
+      font-weight: bold;
+      color: #ff5733;
+    }
+                                 
   </style>
 </head>
 <body id="top">
@@ -107,6 +142,9 @@
       </div>
     </div>
       <br> 
+
+            <br> 
+        </hr>
       
        <form id="shipping-form"> 
       <h2>Shipping Address</h2> 
@@ -159,7 +197,11 @@ setInterval(nextReview, 5000); // Auto-slide every 5 seconds
     }
 
     setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
-  </script>
+
+     
+     // SHIPPING FORM PERSONALITY//
+     
+     </script>
     <script>
         emailjs.init("-M2E86myTW1WMc8Gy"); // Your public key
 
