@@ -180,13 +180,15 @@
 
     setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
   </script>
-<script>
+
+        
+        <script>
     let currentReviewIndex = 0;
-const reviewSlides = document.querySelectorAll(".carousel-slide");
+const reviewSlides = document.querySelectorAll(".review-carousel-slide");
 const totalReviewSlides = reviewSlides.length;
 
 function showReviewSlide(index) {
-    const reviewCarousel = document.querySelector(".carousel-images");
+    const reviewCarousel = document.querySelector(".review-carousel-images");
     if (index >= totalReviewSlides) currentReviewIndex = 0;
     else if (index < 0) currentReviewIndex = totalReviewSlides - 1;
     else currentReviewIndex = index;
